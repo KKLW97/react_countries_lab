@@ -27,24 +27,25 @@ const CountriesContainer = () => {
     // handles the change in state of false to true when checkbox is clicked (toggle function)
     // make event handler for check box here
 
-    const handleCheckedbox = ((country) => {
-        // filter through countries
-        // where isChecked == true
-        // append to visited list
-        const value = country.target.value;
-        const isChecked = country.target.checked;
-        if(!isChecked){
-            //Add checked item into checkList
-            console.log("checked")
-            setCheckedList([...checkedList, value]);
-        } else {
-            //Remove unchecked item from checkList
-            console.log("not checked");
-            const filteredList = checkedList.filter((e) => e !== value);
-            setCheckedList(filteredList);
-        }
+    // const handleCheckedbox = ((event) => {
+    //     // filter through countries
+    //     // where isChecked == true
+    //     // append to visited list
+    //     const value = event.target.value;
+    //     const isChecked = event.target.checked;
+    //     if(!isChecked){
+    //         //Add checked item into checkList
+    //         console.log("checked")
+    //         setCheckedList([...checkedList, value]);
+    //     } else {
+    //         //Remove unchecked item from checkList
+    //         console.log("not checked");
+    //         const filteredList = checkedList.filter((e) => e !== value);
+    //         setCheckedList(filteredList);
+    //     }
         
-    })
+    // })
+    
     
     return(
     
