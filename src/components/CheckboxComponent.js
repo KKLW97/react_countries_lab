@@ -9,10 +9,13 @@
 //                 <span>{label}</span>
 //                 <input
 //                     type="checkbox" checked={isChecked} 
-//                     onChange={() => setIsChecked((prev)=> !prev)}
+//                     onChange={() => {
+//                         setIsChecked((prev)=> !prev);
+//                         console.log(isChecked);}}
 //                 />
 //             </label>
-//             {/* <p>{isChecked ? "Visited" : "Unvisted"}</p> */}
+            
+//             <p>{isChecked ? "Visited" : "Unvisted"}</p>
 //         </div>
 //      );
 // }
