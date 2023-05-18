@@ -1,39 +1,31 @@
 import { useState } from "react";
 const Country = ({country}) => {
 
-    const [checked, setChecked] = useState(false);
-    const [checkedList, setCheckedList] = useState([]);
+    // if set use state as true then in the input checkbox's property of checked ={!checked} this results in 
+    // console.log(checked) = false when the box is unticked and true when the box is ticked
+    const [checked, setChecked] = useState(true);
+    // const [checkedList, setCheckedList] = useState([]);
 
     // add functionality here for check box ticked
-    const handleChecked = ((e) => {
-        // filter through countries
-        // where isChecked == true
-        // append to visited list
-        // const value = e.target.value;
-        // const isChecked = e.target.checked;
-        if(!checked){
-            //Add checked item into checkList
-            console.log("checked")
-            // setChecked(true)
-        } else {
-            //Remove unchecked item from checkList
-            console.log("not checked");
-            // const filteredList = checkedList.filter((e) => e !== value);
-            // setCheckedList(filteredList);
+    const isBoxTicked = () => {
+        if(checked){
+            console.log("the box is checked", country.name.common, checked)
+        }else{
+            console.log("the box is not checked", country.name.common, checked)
         }
-        
-    })
+    }
     return(
         <ul>
             <li>
                 {country.name.common + " " + country.flag}
                 <input 
                     type="checkbox" 
-                    checked={checked} 
+                    name="checkbox"
+                    checked={!checked}
                     onChange={ () => {
-                        handleChecked();
                         setChecked((prev)=> !prev);
-                        console.log(checked)
+                        // console.log(checked)
+                        isBoxTicked();
                     }}/>
 
             </li>

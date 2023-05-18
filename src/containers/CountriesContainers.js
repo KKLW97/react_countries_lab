@@ -9,7 +9,7 @@ const CountriesContainer = () => {
     // onClick to move the country from countriesList to visitedCountriesList
 
     const [countries, setCountries] = useState(null);
-    // const [checkedList, setCheckedList] = useState([]);
+    const [checkedList, setCheckedList] = useState([]);
 
 
     const fetchCountries = async () => {
@@ -27,25 +27,25 @@ const CountriesContainer = () => {
     // handles the change in state of false to true when checkbox is clicked (toggle function)
     // make event handler for check box here
 
-    // const handleCheckedbox = ((e) => {
-    //     // filter through countries
-    //     // where isChecked == true
-    //     // append to visited list
-    //     const value = e.target.value;
-    //     const isChecked = e.target.checked;
-    //     if(isChecked){
-    //         //Add checked item into checkList
-    //         console.log("checked")
-    //         setCheckedList([...checkedList, value]);
-    //     } else {
-    //         //Remove unchecked item from checkList
-    //         console.log("not checked");
-    //         const filteredList = checkedList.filter((e) => e !== value);
-    //         setCheckedList(filteredList);
-    //     }
+    const handleCheckedbox = ((country) => {
+        // filter through countries
+        // where isChecked == true
+        // append to visited list
+        const value = country.target.value;
+        const isChecked = country.target.checked;
+        if(!isChecked){
+            //Add checked item into checkList
+            console.log("checked")
+            setCheckedList([...checkedList, value]);
+        } else {
+            //Remove unchecked item from checkList
+            console.log("not checked");
+            const filteredList = checkedList.filter((e) => e !== value);
+            setCheckedList(filteredList);
+        }
         
-    // })
-
+    })
+    
     return(
     
         <div className="container">
