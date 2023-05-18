@@ -2,9 +2,13 @@ import './App.css';
 import CountriesContainer from './containers/CountriesContainers';
 
 function App() {
-  
+
   return (
-    <CountriesContainer/>
+    <div>
+      <h1>Welcome to the Countries Bucket List!</h1>
+      <CountriesContainer/>
+
+    </div>
   );
 }
 

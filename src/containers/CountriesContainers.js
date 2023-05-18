@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Country from "../components/Country";
 
 const CountriesContainer = () => {
 
@@ -7,21 +8,27 @@ const CountriesContainer = () => {
     // add a button or a checklist to mark the country as visited
     // onClick to move the country from countriesList to visitedCountriesList
 
-    const [country, setCountry] = useState(null);
+    const [countries, setCountries] = useState(null);
 
     const fetchCountries = async () => {
         const response = await fetch("https://restcountries.com/v3.1/all");
         const jsonData = await response.json();
-        setCountry(jsonData);
+        setCountries(jsonData);
     }
 
     useEffect(() => {
         fetchCountries();
     },[])
 
+    const countriesList = countries ? countries.map((country) => <Country country={country}/>) : <p>Loading countries!</p>
+    // make event handler for check box here
+
+    // const handleCheckedbox = ()
+
     return(
         <>
-            <p>Hello from CountriesContainer!</p>
+            <h3>Countries I still need to visit:</h3>
+            {countriesList}
         </>
     );
 
