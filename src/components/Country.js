@@ -1,6 +1,8 @@
-import CheckboxComponent from "./CheckboxComponent";
+import { useState } from "react";
 
 const Country = ({country}) => {
+
+    const [isChecked, setIsChecked] = useState(false);
 
     // add functionality here for check box ticked
 
@@ -8,7 +10,11 @@ const Country = ({country}) => {
         <ul>
             <li>
                 {country.name.common + " " + country.flag}
-                <CheckboxComponent id="visitCheck" label="Have I visited this country?"/>
+                <input 
+                    type="checkbox" 
+                    checked={isChecked} 
+                    onChange={() => setIsChecked((prev)=> !prev)}/>
+
             </li>
         </ul>
     )

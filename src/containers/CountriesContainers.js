@@ -23,7 +23,14 @@ const CountriesContainer = () => {
     const countriesList = countries ? countries.map((country) => <Country country={country}/>) : <p>Loading countries!</p>
     // make event handler for check box here
 
-    // const handleCheckedbox = ()
+    const handleCheckedbox = (() => {
+        // filter through countries
+        // where isChecked == true
+        // append to visited list
+        // const countriesVisited = countriesList.filter(country.checkboxComponent.isChecked == true)
+
+        
+    })
 
     return(
         <>
