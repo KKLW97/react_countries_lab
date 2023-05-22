@@ -1,11 +1,15 @@
-const VisitedCountryList = (countries) => {
+// import Country from "./Country";
 
-    
-    return ( 
-        <>
-            <h3>Countries Visited:</h3>
-        </>
-     );
-}
+// const VisitedCountryList = (visitedCountries) => {
+
+//     const visitedCountriesData = visitedCountries
+//     console.log(visitedCountries);
+//     const visitedCountriesList = visitedCountriesData.map((country) => <Country country={country} />)
+//     return ( 
+//         <>
+//             <h3>Countries Visited:</h3>
+//         </>
+//      );
+// }
  
-export default VisitedCountryList;
+// export default VisitedCountryList;

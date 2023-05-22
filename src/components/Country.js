@@ -24,7 +24,7 @@ const Country = ({country, visitedCountries, setVisitedCountries, handleCheckedb
                     checked={!checked}
                     onChange={ (e) => {
                         setChecked((prev)=> !prev);
-                        handleCheckedbox(e.target.checked);
+                        handleCheckedbox(country.name.common);
                         isBoxTicked(); 
                     }}
                     />

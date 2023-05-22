@@ -39,13 +39,19 @@ const CountriesContainer = () => {
 
     const countriesList = countries ? countries.map((country, index) => <Country key={index} country={country} visitCountry={visitCountry} handleCheckedbox={handleCheckedbox}/>) : <p>Loading countries!</p>
 
+    // const visitedCountriesList = visitedCountries.map((country) => <ul><Country country={country}/></ul>)
+
     return(
     
-        <div className="container">
-            <h3>Countries I still need to visit:</h3>
-            <div className="countries-container">
+        <div className="list-container">
+            <div className="countries-container"> 
+                <h3>Countries I still need to visit:</h3>
                 {countriesList}
-                <VisitedCountryList visitedCountries={visitedCountries}/>
+            </div>
+            <div>
+                <h3>Countries visited:</h3>
+                {visitedCountries}
+                {/* <VisitedCountryList visitedCountries={visitedCountries}/> */}
             </div>
             
         </div>
