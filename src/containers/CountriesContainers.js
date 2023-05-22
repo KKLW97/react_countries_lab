@@ -30,12 +30,22 @@ const CountriesContainer = () => {
 
         //    const isChecked = event.target.checked;
            if(visitedCountries){
-           setVisitedCountries([...visitedCountries, country]);
+           setVisitedCountries([...visitedCountries, (country.name.common + country.flag)]);
         //    }else{
         //    const newVisitedCountriesList = visitedCountries.filter(country => country !== name);
         //    setVisitedCountries(newVisitedCountriesList)
            }
     })
+
+    // const handleCheckedbox = (event) => {
+    //     let updatedList = [...visitedCountries]
+    //     if(event.target.checked){
+    //         updatedList = [...visitedCountries, event.target.value]
+    //     }else{
+    //         updatedList.splice(visitedCountries.indexOf(event.target.value),1)
+    //     }
+    //     setVisitedCountries(updatedList);
+    // }
 
     const countriesList = countries ? countries.map((country, index) => <Country key={index} country={country} visitCountry={visitCountry} handleCheckedbox={handleCheckedbox}/>) : <p>Loading countries!</p>
 

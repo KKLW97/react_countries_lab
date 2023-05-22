@@ -13,6 +13,23 @@ const Country = ({country, visitedCountries, setVisitedCountries, handleCheckedb
             console.log("the box is not checked", country.name.common, checked)
         }
     }
+    // const handleChange = ((e) => {
+    //     if (checked) {
+    //        setVisitedCountries([...visitedCountries, e.target.value]);
+    //     } else {
+    //        setVisitedCountries(visitedCountries.filter((country) => country !== e.target.value));
+    //     }
+    // })
+
+    // const handleCheckedbox = (event) => {
+    //     let updatedList = ([...visitedCountries])
+    //     if(event.target.checked){
+    //         updatedList = ([...visitedCountries, event.target.value])
+    //     }else{
+    //         updatedList.splice(visitedCountries.indexOf(event.target.value),1)
+    //     }
+    //     setVisitedCountries(updatedList);
+    // }
 
     return(
         <ul>
@@ -24,7 +41,7 @@ const Country = ({country, visitedCountries, setVisitedCountries, handleCheckedb
                     checked={!checked}
                     onChange={ (e) => {
                         setChecked((prev)=> !prev);
-                        handleCheckedbox(country.name.common);
+                        handleCheckedbox(country);
                         isBoxTicked(); 
                     }}
                     />
