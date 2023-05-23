@@ -27,14 +27,14 @@ const CountriesContainer = () => {
 
     // handles the change in state of false to true when checkbox is clicked (toggle function)
     const handleCheckedbox = ((country) => {
-
         //    const isChecked = event.target.checked;
-           if(visitedCountries){
-           setVisitedCountries([...visitedCountries, (country.name.common + country.flag)]);
-        //    }else{
-        //    const newVisitedCountriesList = visitedCountries.filter(country => country !== name);
-        //    setVisitedCountries(newVisitedCountriesList)
-           }
+        // const visitedCountry = country.target.checked
+        if(visitedCountries){
+            setVisitedCountries([...visitedCountries, (country)]);
+        }else{
+            const newVisitedCountriesList = visitedCountries.filter(country => visitedCountries !== visitedCountries);
+            setVisitedCountries(newVisitedCountriesList)
+        }
     })
 
     // const handleCheckedbox = (event) => {
@@ -48,7 +48,7 @@ const CountriesContainer = () => {
     // }
 
     const countriesList = countries ? countries.map((country, index) => <Country key={index} country={country} visitCountry={visitCountry} handleCheckedbox={handleCheckedbox}/>) : <p>Loading countries!</p>
-
+    const visitedCountriesList = visitedCountries.map((country) => <Country country={country}/>)
     // const visitedCountriesList = visitedCountries.map((country) => <ul><Country country={country}/></ul>)
 
     return(
@@ -60,7 +60,7 @@ const CountriesContainer = () => {
             </div>
             <div>
                 <h3>Countries visited:</h3>
-                {visitedCountries}
+                {visitedCountriesList}
                 {/* <VisitedCountryList visitedCountries={visitedCountries}/> */}
             </div>
             
