@@ -11,6 +11,7 @@ const CountriesContainer = () => {
     // onClick to move the country from countriesList to visitedCountriesList
     const [countries, setCountries] = useState(null);
     const [visitedCountries, setVisitedCountries] = useState([]);
+    const [visited, setVisited] = useState(false)
 
     useEffect(() => {
         const fetchCountries = async () => {
@@ -48,7 +49,7 @@ const CountriesContainer = () => {
     // }
 
     const countriesList = countries ? countries.map((country, index) => <Country key={index} country={country} visitCountry={visitCountry} handleCheckedbox={handleCheckedbox}/>) : <p>Loading countries!</p>
-    const visitedCountriesList = visitedCountries.map((country) => <Country country={country}/>)
+    const visitedCountriesList = visitedCountries.map((country) => <Country country={country} visited="true"/>)
     // const visitedCountriesList = visitedCountries.map((country) => <ul><Country country={country}/></ul>)
 
     return(

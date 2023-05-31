@@ -1,5 +1,5 @@
 import { useState } from "react";
-const Country = ({country, visitedCountries, setVisitedCountries, handleCheckedbox}) => {
+const Country = ({country, visitedCountries, setVisitedCountries, handleCheckedbox, visited}) => {
 
     // if set use state as true then in the input checkbox's property of checked ={!checked} this results in 
     // console.log(checked) = false when the box is unticked and true when the box is ticked
@@ -9,33 +9,28 @@ const Country = ({country, visitedCountries, setVisitedCountries, handleCheckedb
     const isBoxTicked = () => {
         if(checked){
             console.log("the box is checked", country.name.common, checked)
+            
         }else{
             console.log("the box is not checked", country.name.common, checked)
         }
     }
-    // const handleChange = ((e) => {
-    //     if (checked) {
-    //        setVisitedCountries([...visitedCountries, e.target.value]);
-    //     } else {
-    //        setVisitedCountries(visitedCountries.filter((country) => country !== e.target.value));
-    //     }
-    // })
-
-    // const handleCheckedbox = (event) => {
-    //     let updatedList = ([...visitedCountries])
-    //     if(event.target.checked){
-    //         updatedList = ([...visitedCountries, event.target.value])
-    //     }else{
-    //         updatedList.splice(visitedCountries.indexOf(event.target.value),1)
-    //     }
-    //     setVisitedCountries(updatedList);
-    // }
 
     return(
         <ul>
             <li>
                 {country.name.common + " " + country.flag}
-                <input 
+                {visited ? "" : 
+                    <input 
+                        type="checkbox" 
+                        name="checkbox"
+                        onChange={ (e) => {
+                            setChecked((prev)=> !prev);
+                            handleCheckedbox(country, e.target.checked);
+                            isBoxTicked();
+                        }}
+                    />
+                }
+                {/* <input 
                     type="checkbox" 
                     name="checkbox"
                     checked={!checked}
@@ -44,7 +39,7 @@ const Country = ({country, visitedCountries, setVisitedCountries, handleCheckedb
                         handleCheckedbox(country);
                         isBoxTicked(); 
                     }}
-                    />
+                    /> */}
 
             </li>
         </ul>
